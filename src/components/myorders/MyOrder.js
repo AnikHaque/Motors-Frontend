@@ -11,42 +11,54 @@ const MyOrder = () => {
     }, [])
     return (
         <div className='bg-order text-dark pt-5 pb-5'>
-            <h1 className="fw-bold mt-2 text-center mb-5">Enrolled Course : {foods.length}</h1>
+            <h1 className="fw-bold mt-2 text-center mb-5">My Orders : {foods.length}</h1>
         <div className="service-container  pt-4 pb-4">
           <div className="container">
          
       {foods.map((pd, index) => (
         <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-3">
            
          <table>
            <tr>
-           <th className='pb-2 order-heading'>Enrolled By:</th>
+           <th className='pb-2 order-heading'>Ordered By:</th>
            </tr>
            <tr>
           <td className='pb-4'>{pd.name}</td>
            </tr>
          </table>
           </div>
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-3">
           <table>
            <tr>
-           <th className='pb-2 order-heading'>Course Name:</th>
+           <th className='pb-2 order-heading'>Car Name:</th>
            </tr>
            <tr>
-          <td className='pb-4'>{pd.foodname}</td>
+          <td className='pb-4'>{pd.productName}</td>
            </tr>
          </table>
           </div>
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-3">
           <table>
            <tr>
-           <th className='pb-2 order-heading'>Course Price:</th>
+           <th className='pb-2 order-heading'>Address:</th>
            </tr>
            <tr>
-          <td className='pb-4'>{pd.price}</td>
+          <td className='pb-4'>{pd.address}</td>
            </tr>
+           
+         </table>
+          </div>
+          <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+          <table>
+           <tr>
+           <th className='pb-2 order-heading'>Contact No:</th>
+           </tr>
+           <tr>
+          <td className='pb-4'>{pd.contact}</td>
+           </tr>
+           
          </table>
           </div>
           

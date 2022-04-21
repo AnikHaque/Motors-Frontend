@@ -23,7 +23,7 @@ const ManageOrder = () => {
            
          <table>
            <tr>
-           <th className='pb-2 order-heading'>Enrolled By:</th>
+           <th className='pb-2 order-heading'>Ordered By:</th>
            </tr>
            <tr>
           <td className='pb-4 text-dark'>{pd.name}</td>
@@ -33,28 +33,35 @@ const ManageOrder = () => {
           <div class="col-12 col-sm-12 col-md-3 col-lg-3">
           <table>
            <tr>
-           <th className='pb-2 order-heading'>Course Name:</th>
+           <th className='pb-2 order-heading'>Car Name:</th>
            </tr>
            <tr>
-          <td className='pb-4'>{pd.foodname}</td>
+          <td className='pb-4'>{pd.productName}</td>
            </tr>
          </table>
           </div>
           <div class="col-12 col-sm-12 col-md-3 col-lg-3">
           <table>
            <tr>
-           <th className='pb-2 order-heading'>Course Price:</th>
+           <th className='pb-2 order-heading'>Delivery Address:</th>
            </tr>
            <tr>
-          <td className='pb-4'>{pd.price}</td>
+          <td className='pb-4'>{pd.address}</td>
            </tr>
          </table>
           </div>
           <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          
           <table>
-           
-           
+           <tr>
+           <th className='pb-2 order-heading'>Contact Info:</th>
+           </tr>
+           <tr>
+          <td className='pb-4'>{pd.contact}</td>
+           </tr>
          </table>
+           
+        
           </div>
           
         </div>

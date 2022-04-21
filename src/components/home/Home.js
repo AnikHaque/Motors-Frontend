@@ -6,6 +6,10 @@ import Gallary from '../gallary/Gallary';
 import Products from '../products/Products';
 import Special from '../special/Special';
 import ManageReview from '../managereview/ManageReview'
+import Dealership from '../dealership/Dealership';
+import Footer from '../footer/Footer';
+import Contact from '../contact/Contact';
+import Articles from '../articles/Articles';
 const Home = () => {
     return (
         <div>
@@ -25,8 +29,19 @@ const Home = () => {
             <Special></Special>
             <br></br>
             <br></br>
+          <Articles></Articles>
+            <br></br>
+            <br></br>
+            <Dealership></Dealership>
+            <br></br>
+            <br></br>
             <ManageReview></ManageReview>
+            <br></br>
+            <br></br>
             <Gallary></Gallary>
+            <Contact></Contact>
+            <Footer></Footer>
+            
         </div>
     );
 };

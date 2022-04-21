@@ -60,13 +60,15 @@ function Dashboard(props) {
               
             {
               admin && <Box>
+                    <Link to='/home' className='dash text-dark'><Button color="inherit">Home</Button></Link>
+                    <br></br>
  <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
             <br></br>
             <Link to={`${url}/addcars`} className='dash text-dark'><Button color="inherit">Add Car</Button></Link>
             <br></br>
             <Link to={`${url}/addspecial`} className='dash text-dark'><Button color="inherit">Add Special Cars</Button></Link>
             <br></br>
-            <Link to={`${url}/manageorder`} className='dash text-dark'><Button color="inherit">All Enrollment</Button></Link>   
+            <Link to={`${url}/manageorder`} className='dash text-dark'><Button color="inherit">All orders</Button></Link>   
             <br></br> 
             <Link to={`${url}/makeadmin`} className='dash text-dark'><Button color="inherit">Make Admin</Button></Link>    
             <br></br>
@@ -74,9 +76,11 @@ function Dashboard(props) {
           } 
             {
               !admin && user.email && <Box>
+                    <Link to='/home' className='dash text-dark'><Button color="inherit">Home</Button></Link>
+                    <br></br>
  <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
             <br></br>
-            <Link to={`${url}/myorder`} className='dash text-dark'><Button color="inherit">My Courses</Button></Link> 
+            <Link to={`${url}/myorder`} className='dash text-dark'><Button color="inherit">My orders</Button></Link> 
             <Link to={`${url}/review`} className='dash text-dark'><Button color="inherit">Add Review</Button></Link> 
               </Box>
           } 
@@ -168,6 +172,9 @@ function Dashboard(props) {
                 <Toolbar />
 
                 <Switch>
+                <Route path={`${path}/home`}>
+                       <Home></Home>
+                    </Route>
                     <Route exact path={path}>
                   <DashboardHome></DashboardHome>
                     </Route>

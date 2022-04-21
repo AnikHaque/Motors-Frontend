@@ -1,72 +1,49 @@
 import React from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
-import './Footer.css'
+import { Col, Row } from 'react-bootstrap';
+import './Footer.css';
 const Footer = () => {
     return (
-        <div className='footer'>
-           <Container>
-  <Row>
-    <Col sm={12} md={12} lg={4}>
-<h2>University</h2>
-    </Col>
-    <Col sm={12} md={12} lg={4}>
-        <div className='mx-5'>
-       
-        </div>
+        <div className="footer-container mb-0">
       
-     
-
-    </Col>
-    <Col sm={12} md={12} lg={4}>
-    <div className='text-center'>
-            <i class="fa-brands fa-facebook fs-2 me-3"></i>
-            <i class="fa-brands fa-instagram-square fs-2 me-3"></i>
-            <i class="fa-brands fa-youtube fs-2 me-3"></i>
-            <i class="fa-brands fa-twitter-square fs-2"></i>
-            </div>
-    </Col>
-    </Row>
- 
-</Container>
-<div className='footer-2nd'>
-<Container>
-  <Row>
-    <Col sm={12} md={12} lg={3}>
-        <h5 className='text-center mb-3'>About Us</h5>
-        <p className='text-center'>Lorem ipsum dolor amet coadipisicing elit sed do eiusmod tempor.</p>
-    </Col>
-    <Col sm={12} md={12} lg={3}>
-        <h5 className='mb-3'>Students Support</h5>
-        <a href=''>Help & Counsiling</a>
-        <br></br>
-        <a href=''>Privacy Policy</a>
-        <br></br>
-        <a href=''>Fees and Enrollment</a>
-        <br></br>
-        <a href=''>Routine Schedule</a>
-        <br></br>
-        <a href=''>Get a Call</a>
-        <br></br>
-        <a href=''>Online Enquiry</a>
-        <br></br>
-        <a href=''>My Account</a>
-    </Col>
-    <Col sm={12} md={12} lg={3}>
-<h5 className='mb-3'>Recent News</h5>
-<b>Using Visual Composer Webs Builder Create WordPress Websites.</b>
-<p>By Zamilsh</p>
-    </Col>
-    <Col sm={12} md={12} lg={3}>
-        <p>Enter your email and we’ll send you latest information plans.</p>
-        <input type='text'></input>
-        <button className='btn btn-light btn-footer'>Subscribe</button>
-    </Col>
-  </Row>
- 
-</Container>
-</div>
-
-        </div>
+        <Row className="footer-body p-5 g-5 mx-auto" xs={1} md={3}  >
+      
+          
+            <Col className="footer-item ">
+                <h3>Contact info</h3>
+                <h5>Contact</h5>
+                <p>Phone: 03 4245 2030</p>
+                <p>Fax: 03 4245 2035</p>
+                <br />
+               
+            </Col>
+            <Col className="footer-item">
+                <h3>Our Address</h3>
+                <p>Motors
+                    <br />
+                    60 Feet,Monipur School
+                    <br />
+                Mirpur 2 no
+                    <br />
+                    Dhaka,Bangladesh</p>
+            </Col>
+            <Col className="footer-item">
+            <h3>Opening Hours</h3>
+                <p>
+                    Mon Tue Wed Fri 8:30AM-9PM </p>
+                <p>Thurs 8:30 AM-7:00 PM</p>
+                <p> Sat: 8:30 AM-09:30 PM</p>
+            </Col>
+            
+        </Row>
+      
+          <div className="text-center">
+          <button className="fs-4"><i className="fab fa-facebook"></i></button>
+            <button className="fs-4 mx-1"><i className="fab fa-instagram"></i></button>
+            <button className="fs-4"> <i className="fab fa-twitter-square"></i></button>
+            <button className="fs-4 ms-1">  <i className="fab fa-google-plus-g"></i></button>
+          </div>
+        <p className="text-center mt-5 py-3 fs-5 mb-0 border-top">Copyright &copy; Motors ,2021</p>
+    </div>
     );
 };
 

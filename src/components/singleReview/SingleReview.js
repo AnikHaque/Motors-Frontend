@@ -1,33 +1,37 @@
 import React from 'react';
-import ReactStars from "react-rating-stars-component";
-import './SingleReview.css';
+import { Card, Col } from 'react-bootstrap';
+
+import StarRatings from 'react-star-ratings';
+
 const SingleReview = ({ review }) => {
-    // const {service} = props;
-    const { _id, name,description,price, img } = review; 
-    const firstExample = {
-      size: 30,
-      value:price,
-      edit: false,
-      
-      
-    };
+
+    const { name, description,price,rating,img } = review;
     
     return (
-        <div className='m-review'>
-            
-  <div class="col bg-review single-review h-100">
-    <img src={img} className='img-fluid '></img>
-  <h4 class="fw-bold mt-2">{name}</h4>
-        <p class="">"{description}"</p>
-        <ReactStars {...firstExample}  />
-    
-</div>
+        <div>
+            <Col className="text-center">
+           
+             
+                    <Card.Body>
+                        <Card.Title>{name}</Card.Title>
 
-</div>
-      
+                        <Card.Text>
+                            {description}
+                        </Card.Text>
+                       
+                        <StarRatings
+                            rating={parseFloat(rating)}
+                            starRatedColor="tomato"
+                            starDimension="25px"
+                            numberOfStars={5}
+                            name='rating'
+                        />
+                    </Card.Body>
+               
+            </Col>
+
+        </div>
     );
-          
-          };
-        
-          
+};
+
 export default SingleReview;

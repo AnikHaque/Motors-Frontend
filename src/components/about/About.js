@@ -3,42 +3,21 @@ import {Container, Row, Col} from 'react-bootstrap';
 import './About.css';
 const About = () => {
     return (
-        <div className=''>
-           <Container>
-  <Row className='mb-4'>
-    <Col sm={12} md={6} lg={4}>
-      <i class="fa-solid fa-graduation-cap bg-about text-white fs-1 p-2 mb-2"></i>
-      <h4>Education Organization</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt lorem ipsum</p>
-    </Col>
-    <Col sm={12} md={6} lg={4}>
-    <i class="fa-brands fa-telegram bg-about text-white fs-1 p-2 mb-2"></i>
-      <h4>Training Center</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt lorem ipsum</p>
-    </Col>
-    <Col sm={12} md={6} lg={4}>
-    <i class="fa-solid fa-ticket bg-about text-white fs-1 p-2 mb-2"></i>
-      <h4>Event Tickets</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt lorem ipsum</p>
-    </Col>
-  </Row>
+        <div className='bg-about'>
+          <Container>
   <Row>
-    <Col sm={12} md={6} lg={4}>
-    <i class="fa-solid fa-cart-arrow-down bg-about text-white fs-1 p-2 mb-2"></i>
-      <h4>Online Shop</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt lorem ipsum</p>
+    <Col sm={12} md={6} lg={6}>
+      <img src='https://motors.stylemixthemes.com/wp-content/uploads/2015/10/about-us-1-529x290.jpg' className='img-fluid'></img>
     </Col>
-    <Col sm={12} md={6} lg={4}>
-    <i class="fa-solid fa-cubes bg-about text-white fs-1 p-2 mb-2"></i>
-      <h4>No Limitation</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt lorem ipsum</p>
-    </Col>
-    <Col sm={12} md={6} lg={4}>
-    <i class="fa-solid fa-star bg-about text-white fs-1 p-2 mb-2"></i>
-      <h4>Great Support</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt lorem ipsum</p>
+    <Col sm={12} md={6} lg={6}>
+      <h2>WELCOME TO THE MOTORS</h2>
+      <p>Before we get ahead of ourselves, we want to welcome you to Loeber Motors. While nothing can replace thing on-the-lot experience.
+We appreciate you taking the time today to visit our web site. Our goal is to give you an interactive tour of our new and used inventory, as well as allow you to conveniently get a quote, schedule a service appointment, or apply for financing. The search for a luxury car is filled with high expectations. Undoubtedly, that has a lot to do with the vehicles you are considering, but at Motors, we think you should also have pretty high expectations for your dealership.
+<br></br>
+ — MIKEY DIOKLES, President of Motors</p>
     </Col>
   </Row>
+  
 </Container>
 
         </div>

@@ -8,7 +8,7 @@ import './Products.css';
 const Products = () => {
     const [food, setFood] = useState([])
     useEffect(()=>{
-fetch('https://glacial-brook-92372.herokuapp.com/products')
+fetch('http://localhost:5000/cars')
 .then(res => res.json())
 .then(data => setFood(data))
     },[])
@@ -16,11 +16,10 @@ fetch('https://glacial-brook-92372.herokuapp.com/products')
 
     return (
         <div className='mt-5 mb-5'>
-           <img src='https://shtheme.info/demosd/orgafe/wp-content/uploads/2019/04/icon8.png' className='img-fluid image-product'></img>
-             <h1 className='text-center fw-bold mb-5'>OUR Products Collections</h1>
+             <h1 className='text-center fw-bold mb-5'>OUR Cars Collections</h1>
             <div className="service-container">
                 <div className="container">
-            <div class="row row-cols-1 row-cols-lg-4 g-4">
+            <div class="row row-cols-1 row-cols-lg-3 g-4">
                 {
                     food.map(foods => <IndividualProduct
                         key={foods._id}

@@ -6,7 +6,7 @@ const ManageOrder = () => {
     const [foods, setFoods] = useState([])
     const {user} = useAuth();
     useEffect(() => {
-        fetch('https://glacial-brook-92372.herokuapp.com/booking')
+        fetch('http://localhost:5000/booking')
             .then(res => res.json())
             .then(data => setFoods(data));
     }, [])

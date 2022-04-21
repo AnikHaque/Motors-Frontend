@@ -18,9 +18,9 @@ import Products from './components/products/Products';
 import MenuDetails from './components/menudetails/MenuDetails';
 import Articles from './components/articles/Articles';
 import Faq from './components/faq/Faq';
-import AddCourse from './components/addcourse/AddCourse';
-import AddInstructor from './components/addinstructor/AddInstructor';
 import AddReviews from './components/addreviews/AddReviews';
+import AddCar from './components/addcar/AddCar';
+import AddSpecial from './components/addspecial/AddSpecial';
 
 function App() {
   return (
@@ -41,11 +41,11 @@ function App() {
         <Route exact path="/products">
          <Products></Products>
         </Route>
-        <Route exact path="/addcourses">
-      <AddCourse></AddCourse>
+        <Route exact path="/addcars">
+      <AddCar></AddCar>
         </Route>
-        <Route exact path="/addinstructor">
-      <AddInstructor></AddInstructor>
+        <Route exact path="/addspecial">
+     <AddSpecial></AddSpecial>
         </Route>
         <Route exact path="/addreviews">
      <AddReviews></AddReviews>
@@ -59,7 +59,7 @@ function App() {
         <Route  path="/faq">
          <Faq></Faq>
         </Route>
-        <PrivateRoute exact path="/courses/:id">
+        <PrivateRoute exact path="/cars/:id">
        <MenuDetails></MenuDetails>
         </PrivateRoute>
         <Route exact path="/login">

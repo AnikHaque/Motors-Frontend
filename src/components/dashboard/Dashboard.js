@@ -40,8 +40,8 @@ import MyOrder from '../myorders/MyOrder';
 import Home from '../home/Home';
 import Review from '../review/Review';
 import MakeAdmin from '../makeadmin/MakeAdmin';
-import AddCourse from '../addcourse/AddCourse';
-import AddInstructor from '../addinstructor/AddInstructor';
+import AddCar from '../addcar/AddCar';
+import AddSpecial from '../addspecial/AddSpecial';
 const drawerWidth = 200;
 
 function Dashboard(props) {
@@ -62,9 +62,9 @@ function Dashboard(props) {
               admin && <Box>
  <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
             <br></br>
-            <Link to={`${url}/addcourses`} className='dash text-dark'><Button color="inherit">Add Course</Button></Link>
+            <Link to={`${url}/addcars`} className='dash text-dark'><Button color="inherit">Add Car</Button></Link>
             <br></br>
-            <Link to={`${url}/addinstructors`} className='dash text-dark'><Button color="inherit">Add Instructor</Button></Link>
+            <Link to={`${url}/addspecial`} className='dash text-dark'><Button color="inherit">Add Special Cars</Button></Link>
             <br></br>
             <Link to={`${url}/manageorder`} className='dash text-dark'><Button color="inherit">All Enrollment</Button></Link>   
             <br></br> 
@@ -173,11 +173,11 @@ function Dashboard(props) {
                     </Route>
                     
                    
-                    <Route path={`${path}/addcourses`}>
-                       <AddCourse></AddCourse>
+                    <Route path={`${path}/addcars`}>
+                       <AddCar></AddCar>
                     </Route>
-                    <Route path={`${path}/addinstructors`}>
-                      <AddInstructor></AddInstructor>
+                    <Route path={`${path}/addspecial`}>
+                      <AddSpecial></AddSpecial>
                     </Route>
                     <Route path={`${path}/manageorder`}>
                         <ManageOrder></ManageOrder>

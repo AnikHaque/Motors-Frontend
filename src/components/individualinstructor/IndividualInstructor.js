@@ -1,32 +1,43 @@
 import React from 'react';
-import { Card, CardGroup, Col } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 import './IndividualInstructor.css';
 const IndividualInstructor = (props) => {
-    const {_id,name,description,designation,img,rating} = props.instructors;
+    const {_id,name,description,type,price,img,speed} = props.foods;
     const firstExample = {
       size: 35,
-      value:rating,
+      value:speed,
       edit: false,
     
       
     };
     return (
         <div>
-           <div class="col hhh">
-  <div className='individual-instructor'>
-  <img src={img} class="card-img-top img-fluid  image-instructor mb-2" alt="..."></img>
-  <h4 class="card-title text-center">{name}</h4>
-  <h6 class="card-title text-center">{designation}</h6>
-  <p class="card-text  text-center">{description}</p>
-  <Link to={`/products/${_id}`}>
-        <button className="btn btn-details text-white px-4 mb-3"> Details <i class="fa-solid fa-arrow-right px-2"></i></button>
-        </Link> 
-  </div>
+          <Col>
+          
+          <Card.Img variant="top" src={img} className='img-fluid' />
+          <Card.Body>
+              <Card.Title className='text-white fw-bold'>{name}</Card.Title>
+              
+              <Card.Text className='text-white'>
+                  $ {price}
+              </Card.Text>
+          </Card.Body>
+          <Card.Body className="d-flex justify-content-between">
 
-</div>
-
+              <Card.Text className='text-white'>
+                  {speed} KM/h
+              </Card.Text>
+              <Card.Text className='text-white'>
+                   {type}
+              </Card.Text>
+          </Card.Body>
+          <Card.Footer className="m-0 p-0">
+                   <Link to={`/cars/${_id}`} > <Button  className="w-100  btn-regular">See Details</Button></Link>
+                </Card.Footer>
+    
+  </Col>
         </div>
     );
 };

@@ -1,16 +1,4 @@
-.about-p{
-    text-align: justify;
- 
-}
-.about-heading{
-    padding-top: 20px;
-    color: white;
-    font-weight: bolder;
-}
-.about-image{
-    
-    
-}
 .bg-about{
-    background-color: #253b80;
+    background-color: #f1f6fa;
+    padding: 50px;
 }

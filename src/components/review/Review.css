@@ -11,11 +11,11 @@
         margin-bottom: 10px;
         border-radius: 5px;
     }
-    .add-service{
+    /* .add-service{
       
-        
-        padding-bottom: 40px;
-    }
+        background-color: #f1f6fa;
+       
+    } */
     .add-service textarea{
         width: 70%;
         height: 100px;

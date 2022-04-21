@@ -6,7 +6,7 @@ import './Instructor.css';
 const Instructor = () => {
     const [instructor, setInstructor] = useState([])
     useEffect(()=>{
-fetch('https://glacial-brook-92372.herokuapp.com/instructor')
+fetch('http://localhost:5000/instructor')
 .then(res => res.json())
 .then(data => setInstructor(data))
     },[])

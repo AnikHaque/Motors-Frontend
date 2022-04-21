@@ -6,6 +6,7 @@ import { useForm, useWatch } from "react-hook-form";
 
 import './MenuDetails.css'
  import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 // import Footer from '../footer/Footer';
 
 const headingService={
@@ -18,7 +19,7 @@ const MenuDetails = () => {
    const { register, handleSubmit, reset } = useForm();
    const onSubmit = data =>{
        console.log(data);
-       axios.post("https://glacial-brook-92372.herokuapp.com/booking",data)
+       axios.post("http://localhost:5000/booking",data)
        .then(res=>{
            if(res.data.insertedId){
               alert("Added Successfully.")
@@ -31,76 +32,55 @@ const MenuDetails = () => {
      const {id} = useParams();
     const [food,setFood] = useState({})
      useEffect(()=>{
-         fetch(`https://glacial-brook-92372.herokuapp.com/courses/${id}`)
+         fetch(`http://localhost:5000/cars/${id}`)
        .then(res=>res.json())
         .then(data=>setFood(data))
 
      },[])
     return (
-        <div className=''>
-          <div className='menu-details'>
-            <h1 className='menu-heading text-center'>{food.name}</h1>
-            <div className='text-center'>
-            <i class="fa-brands fa-facebook fs-2 me-3"></i>
-            <i class="fa-brands fa-instagram-square fs-2 me-3"></i>
-            <i class="fa-brands fa-youtube fs-2 me-3"></i>
-            <i class="fa-brands fa-twitter-square fs-2"></i>
+      <div>
+     
+      <div>
+        <h5 className="bg-dark my-5 p-3 text-white ">{food.name} is added to your order List</h5>
+
+        <div className="container ">
+          <div className="row  g-4">
+            <div className="col-12 col-md-7">
+              <div className="card d-flex flex-md-row  flex-col">
+                <img src={food.img} className="w-50 " alt="..." />
+                <div className="card-body text-start">
+                  <h5 className="card-title">{food.name}</h5>
+                  <p className="card-text">{food.description}.</p>
+                  <h5 className="card-title">$ {food.price}/person</h5>
+                </div>
+              </div>
             </div>
-           
+
+            <div className="col-12 col-md-5">
+              <div>
+                <form className="form-details" onSubmit={handleSubmit(onSubmit)}>
+                  <input defaultValue={user.displayName} className="w-100 p-2 m-1" type="text" {...register("name")} readOnly /> <br />
+
+                  <input defaultValue={user.email} className="w-100 p-2 m-1" type="email" {...register("email")} readOnly /> <br />
+
+                  <input placeholder=" Selected Product name"  className="w-100 p-2 m-1" type="text" {...register("productName")} required /> <br />
+
+                  <input placeholder="Enter your Address" className="w-100 p-2 m-1 " type="text" {...register("address")} /> <br />
+                  <input placeholder="Enter Contact No." className="w-100 p-2 m-1" type="number" {...register("contact")} /> <br />
+                  <input defaultValue="pending" className="w-100 p-2 m-1" type="text" {...register("status")} hidden /> <br />
+                  <input className="w-100 p-2 m-1 bg-success text-white fw-bold" type="submit" value="Place Order" />
+                  <Link to="/dashboard/myOrders"><button className="btn-regular">See my Orders</button></Link>
+                </form>
+              </div>
+            </div>
+
+
           </div>
-<Container fluid>
-  <Row>
-    <Col className='' sm={12} md={12} lg={6}>
-      <img src={food.img} className='img-fluid  mx-auto d-flex  img-details'></img></Col>
-    <Col sm={12} md={12} lg={6}>
-    {/* <div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 pb-5">
-    <h1 className='fw-bold text-dark text-center mt-2'>  {food.name}</h1>
-        <br></br>
-        <p className='text-dark mx-5'><b>Price:</b> ${food.price}</p>
-        <p className='text-dark mx-5 des'>{food.description}</p>      
+        </div>
+      </div>
+
+      
     </div>
-  </div>
-</div> */}
-
-<form onSubmit={handleSubmit(onSubmit)} className="bg-details text-center w-75 mx-auto pt-5 pb-5 px-5 pe-5 mb-5">
-     <input {...register("email", { required: true, maxLength: 120 })} placeholder="email" className='w-100 p-2' defaultValue={user.email} />
-<br></br>
-<br></br>
-     <input {...register("name", { required: true, maxLength: 520 })} placeholder="name" className='w-100 p-2' defaultValue={user.displayName} />
-     <br></br>
-<br></br>
-     <input {...register("foodname", { required: true, })} placeholder="Course Name" className='w-100 p-2' />
-
-     <br></br>
-<br></br>
-     <input type="text" {...register("price")}placeholder="Course Price" className='w-100 p-2' />
-     <br></br>
-<br></br>
-<input {...register("image", { required: true, maxLength: 920 })} placeholder="Course Image" className='w-100 p-2' />
-<br></br>
-<br></br>
-     <input type="submit" className='w-50' value='Place Order' />
-   </form>
-        
-    </Col>
-  </Row>
-</Container>
-<h1 className='text-center mt-5 mb-3'>Details:</h1>
-<div className='container'>
-<p className='text-dark mx-5 des'>{food.description}</p>  
-<p className='mx-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-
-
-
- 
-   
- </div>
     );
 
     }

@@ -13,11 +13,11 @@ const SingleReview = ({ review }) => {
     };
     
     return (
-        <div>
+        <div className='m-review'>
             
-  <div class="col bg-light single-review h-100">
-    <img src={img} className='img-fluid'></img>
-  <h4 class="fw-bold">{name}</h4>
+  <div class="col bg-review single-review h-100">
+    <img src={img} className='img-fluid '></img>
+  <h4 class="fw-bold mt-2">{name}</h4>
         <p class="">"{description}"</p>
         <ReactStars {...firstExample}  />
     

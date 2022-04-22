@@ -15,7 +15,7 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data =>{
         console.log(data);
-        axios.post("http://localhost:5000/reviews",data)
+        axios.post("https://pacific-chamber-54725.herokuapp.com/reviews",data)
         .then(res=>{
             if(res.data.insertedId){
                 alert("Added Successfully");

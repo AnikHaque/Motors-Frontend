@@ -4,7 +4,7 @@ import './Special.css';
 const Special = () => {
     const [food, setFood] = useState([])
     useEffect(()=>{
-fetch('http://localhost:5000/special')
+fetch('https://pacific-chamber-54725.herokuapp.com/special')
 .then(res => res.json())
 .then(data => setFood(data))
     },[])

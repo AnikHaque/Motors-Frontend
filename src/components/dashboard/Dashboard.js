@@ -42,6 +42,7 @@ import Review from '../review/Review';
 import MakeAdmin from '../makeadmin/MakeAdmin';
 import AddCar from '../addcar/AddCar';
 import AddSpecial from '../addspecial/AddSpecial';
+import Pay from '../pay/Pay';
 const drawerWidth = 200;
 
 function Dashboard(props) {
@@ -81,6 +82,9 @@ function Dashboard(props) {
  <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
             <br></br>
             <Link to={`${url}/myorder`} className='dash text-dark'><Button color="inherit">My orders</Button></Link> 
+            <br></br>
+           
+            <br></br>
             <Link to={`${url}/review`} className='dash text-dark'><Button color="inherit">Add Review</Button></Link> 
               </Box>
           } 
@@ -182,6 +186,9 @@ function Dashboard(props) {
                    
                     <Route path={`${path}/addcars`}>
                        <AddCar></AddCar>
+                    </Route>
+                    <Route path={`${path}/pay/:paymentId`}>
+                       <Pay></Pay>
                     </Route>
                     <Route path={`${path}/addspecial`}>
                       <AddSpecial></AddSpecial>

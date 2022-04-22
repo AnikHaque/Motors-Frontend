@@ -6,7 +6,7 @@ const ManageOrder = () => {
     const [foods, setFoods] = useState([])
     const {user} = useAuth();
     useEffect(() => {
-        fetch('http://localhost:5000/booking')
+        fetch('https://pacific-chamber-54725.herokuapp.com/booking')
             .then(res => res.json())
             .then(data => setFoods(data));
     }, [])

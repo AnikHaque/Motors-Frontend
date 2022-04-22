@@ -8,7 +8,7 @@ import './HomeProduct.css';
 const HomeProduct= () => {
     const [food, setFood] = useState([])
     useEffect(()=>{
-fetch('http://localhost:5000/courses')
+fetch('https://pacific-chamber-54725.herokuapp.com/courses')
 .then(res => res.json())
 .then(data => setFood(data))
     },[])

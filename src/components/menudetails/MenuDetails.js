@@ -19,7 +19,7 @@ const MenuDetails = () => {
    const { register, handleSubmit, reset } = useForm();
    const onSubmit = data =>{
        console.log(data);
-       axios.post("http://localhost:5000/booking",data)
+       axios.post("https://pacific-chamber-54725.herokuapp.com/booking",data)
        .then(res=>{
            if(res.data.insertedId){
               alert("Added Successfully.")
@@ -32,7 +32,7 @@ const MenuDetails = () => {
      const {id} = useParams();
     const [food,setFood] = useState({})
      useEffect(()=>{
-         fetch(`http://localhost:5000/cars/${id}`)
+         fetch(`https://pacific-chamber-54725.herokuapp.com/cars/${id}`)
        .then(res=>res.json())
         .then(data=>setFood(data))
 
@@ -41,7 +41,7 @@ const MenuDetails = () => {
       <div>
      
       <div>
-        <h5 className="bg-dark my-5 p-3 text-white ">{food.name} is added to your order List</h5>
+        <h5 className="bg-dark my-5 p-3 text-white ">{food._id} is added to your order List</h5>
 
         <div className="container ">
           <div className="row  g-4">
@@ -69,7 +69,14 @@ const MenuDetails = () => {
                   <input placeholder="Enter Contact No." className="w-100 p-2 m-1" type="number" {...register("contact")} /> <br />
                   <input defaultValue="pending" className="w-100 p-2 m-1" type="text" {...register("status")} hidden /> <br />
                   <input className="w-100 p-2 m-1 bg-success text-white fw-bold" type="submit" value="Place Order" />
-                  <Link to="/dashboard/myOrders"><button className="btn-regular">See my Orders</button></Link>
+
+               
+              
+              
+              <Link to={`/dashboard/pay/${food._id}`}><button className="btn-regular">Please Pay</button></Link>
+               
+           
+                  
                 </form>
               </div>
             </div>

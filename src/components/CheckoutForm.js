@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { type } from '@testing-library/user-event/dist/type';
+import useAuth from '../hooks/useAuth';
 
 
 
 
 const CheckoutForm = ({appointment}) => {
-    const [error, setError] = useState('')
-    const {price} = appointment;
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [clientSecret,setClientSecret] = useState('');
+    const {price,name} = appointment;
     const stripe = useStripe();
     const elements = useElements();
+const {user} = useAuth();
+useEffect(()=>{
+fetch('http://localhost:5000/create-payment-intent',{
+  method:'POST',
+  headers: {
+    'content-type': 'application/json'
+  },
+  body: JSON.stringify({price})
+})
+.then(res=>res.json())
+.then(data=>setClientSecret(data.clientSecret))
+},[price]);
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -35,7 +51,29 @@ const CheckoutForm = ({appointment}) => {
           }
 
         
-
+// payment intent 
+const {paymentIntent, error:intentError} = await stripe.confirmCardPayment(
+ clientSecret,
+  {
+    payment_method: {
+      card: card,
+      billing_details: {
+        name: name,
+        email: user.email
+        
+      },
+    },
+  },
+);
+if(intentError){
+  setError(intentError.message);
+  setSuccess('');
+}
+else{
+  setSuccess('Your payment processed successfully');
+  setError('');
+  console.log(paymentIntent)
+}
       
     }
     return (
@@ -63,6 +101,9 @@ const CheckoutForm = ({appointment}) => {
     </form>
     {
         error && <p className='text-danger'>{error}</p>
+    }
+    {
+        success && <p className='text-success'>{success}</p>
     }
         </div>
     );

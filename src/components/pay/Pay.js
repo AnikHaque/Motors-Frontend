@@ -17,11 +17,13 @@ const Pay = () => {
         <div>
             <h1>Please pay for : {appointment.name} </h1>
             <p>Pay : $ {appointment.price}</p>
-            <Elements stripe={stripePromise}>
-      <CheckoutForm
-      appointment={appointment}
-      />
-    </Elements>
+    {
+        appointment.price && <Elements stripe={stripePromise}>
+        <CheckoutForm
+        appointment={appointment}
+        />
+        </Elements>
+    }
         </div>
     );
 };

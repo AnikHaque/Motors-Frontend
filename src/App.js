@@ -21,6 +21,7 @@ import Faq from './components/faq/Faq';
 import AddReviews from './components/addreviews/AddReviews';
 import AddCar from './components/addcar/AddCar';
 import AddSpecial from './components/addspecial/AddSpecial';
+import Test from './components/Test';
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
         </Route>
         <Route exact path="/addspecial">
      <AddSpecial></AddSpecial>
+        </Route>
+        <Route exact path="/test">
+    <Test></Test>
         </Route>
         <Route exact path="/addreviews">
      <AddReviews></AddReviews>

@@ -10,12 +10,12 @@ const CheckoutForm = ({appointment}) => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [clientSecret,setClientSecret] = useState('');
-    const {price,name} = appointment;
+    const {price,name, _id} = appointment;
     const stripe = useStripe();
     const elements = useElements();
 const {user} = useAuth();
 useEffect(()=>{
-fetch('http://localhost:5000/create-payment-intent',{
+fetch('https://pacific-chamber-54725.herokuapp.com/create-payment-intent',{
   method:'POST',
   headers: {
     'content-type': 'application/json'
@@ -72,7 +72,25 @@ if(intentError){
 else{
   setSuccess('Your payment processed successfully');
   setError('');
-  console.log(paymentIntent)
+  console.log(paymentIntent);
+// save to database 
+const payment = {
+amount: paymentIntent.amount,
+transaction:paymentIntent.client_secret,
+created:paymentIntent.created,
+last4:paymentMethod.card.last4
+
+}
+const url = `https://pacific-chamber-54725.herokuapp.com/cars/${_id}`;
+fetch(url, {
+  method: 'PUT',
+  headers: {
+    'content-type': 'application/json'
+  },
+  body:JSON.stringify(payment)
+})
+.then(res=>res.json())
+.then(data=>console.log(data))
 }
       
     }

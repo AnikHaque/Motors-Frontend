@@ -23,6 +23,7 @@ const MenuDetails = () => {
        .then(res=>{
            if(res.data.insertedId){
               alert("Added Successfully.")
+              
                reset();
               
                

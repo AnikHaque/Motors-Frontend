@@ -2,16 +2,11 @@ import { Button } from 'bootstrap';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import IndividualProduct from '../individualproduct/IndividualProduct';
-
-
 import './SmartEducation.css';
-
 const SmartEducation = () => {
 
-
     return (
-        <div className='visit'>
-            
+        <div className='visit'>   
             <Container>
   <Row>
     <Col sm={12} md={6} lg={6}>

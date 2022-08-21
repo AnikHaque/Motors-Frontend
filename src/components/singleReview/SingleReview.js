@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-
 import StarRatings from 'react-star-ratings';
 
 const SingleReview = ({ review }) => {

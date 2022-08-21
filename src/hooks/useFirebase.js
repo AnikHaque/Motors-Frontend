@@ -20,7 +20,7 @@ const useFirebase = () => {
     const registerUser = (email, password, name, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then(() => {
                 setAuthError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);

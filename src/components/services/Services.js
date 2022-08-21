@@ -1,8 +1,6 @@
 import React from 'react';
-import axios from 'axios';
-import { useForm } from "react-hook-form";
 import './Services.css';
-import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
+import { Card, CardGroup} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
@@ -45,10 +43,8 @@ const Services = () => {
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
       </Card.Text>
       <Link className='text-dark'><button className='btn btn-banner text-white d-flex mx-auto px-5 pe-5'>Read</button></Link>
-    </Card.Body>
-    
+    </Card.Body> 
   </Card>
-  
 </CardGroup>
         
         </div>

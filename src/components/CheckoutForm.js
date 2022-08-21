@@ -18,7 +18,7 @@ useEffect(()=>{
 fetch('https://pacific-chamber-54725.herokuapp.com/create-payment-intent',{
   method:'POST',
   headers: {
-    'content-type': 'application/json'
+    'content-type':'application/json'
   },
   body: JSON.stringify({price})
 })

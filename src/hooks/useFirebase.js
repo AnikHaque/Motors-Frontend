@@ -30,7 +30,7 @@ const useFirebase = () => {
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
-                }).catch((error) => {
+                }).catch(() => {
                 });
                 history.replace('/');
             })

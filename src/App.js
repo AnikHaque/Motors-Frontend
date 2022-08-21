@@ -10,7 +10,7 @@ import PrivateRoute from '../src/components/privateroute/PrivateRoute';
 import Dashboard from './components/dashboard/Dashboard';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
-import Blogs from './components/blogs/Blogs';
+
 import MakeAdmin from './components/makeadmin/MakeAdmin';
 
 import Products from './components/products/Products';

@@ -1,6 +1,4 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import IndividualProduct from '../individualproduct/IndividualProduct';
 import './Visit.css';
 
 const Visit = () => {

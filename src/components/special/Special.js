@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Individualinstructor from '../individualinstructor/IndividualInstructor';
 import './Special.css';
 const Special = () => {
-    const [hello, setHello] = useState([])
+    const [food, setFood] = useState([])
     useEffect(()=>{
 fetch('https://pacific-chamber-54725.herokuapp.com/special')
 .then(res => res.json())
-.then(data => setHello(data))
+.then(data => setFood(data))
     },[])
 
     return (
@@ -16,9 +16,9 @@ fetch('https://pacific-chamber-54725.herokuapp.com/special')
                 <div className="container">
             <div class="row row-cols-1 row-cols-lg-3 g-4">
                 {
-                    hello.map(hellos => <Individualinstructor
-                        key={hellos._id}
-                        hellos={hellos}
+                    food.map(foods => <Individualinstructor
+                        key={foods._id}
+                        foods={foods}
                     ></Individualinstructor>)
                 }
                 </div>

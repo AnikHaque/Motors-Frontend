@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import { type } from '@testing-library/user-event/dist/type';
 import useAuth from '../hooks/useAuth';
 
 

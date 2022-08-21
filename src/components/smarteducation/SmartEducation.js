@@ -20,10 +20,7 @@ const SmartEducation = () => {
 <button className='btn btn-light px-5 pe-5 pt-3 pb-3'>Explore</button>
     </Col>
   </Row>
- 
 </Container>
   </div>
     )}     
-
-
 export default SmartEducation;

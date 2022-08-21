@@ -31,7 +31,6 @@ fetch('https://pacific-chamber-54725.herokuapp.com/create-payment-intent',{
           if (card == null) {
             return;
           }
-
           const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
             card,
@@ -42,9 +41,7 @@ fetch('https://pacific-chamber-54725.herokuapp.com/create-payment-intent',{
           } else {
               setError('');
             console.log('[PaymentMethod]', paymentMethod);
-          }
-
-        
+          }     
 // payment intent 
 const {paymentIntent, error:intentError} = await stripe.confirmCardPayment(
  clientSecret,

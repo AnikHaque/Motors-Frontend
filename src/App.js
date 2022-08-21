@@ -80,8 +80,6 @@ function App() {
       </Switch>
       </BrowserRouter>
       </AuthProvider>
-      
-     
     </div>
   );
 }

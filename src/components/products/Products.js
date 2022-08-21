@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+
 import IndividualProduct from '../individualproduct/IndividualProduct';
-
-
 import './Products.css';
 
 const Products = () => {
@@ -28,8 +26,7 @@ fetch('https://pacific-chamber-54725.herokuapp.com/cars')
                 }
                 </div>
                 </div>
-            </div>
-           
+            </div>  
   </div>
     )}     
 

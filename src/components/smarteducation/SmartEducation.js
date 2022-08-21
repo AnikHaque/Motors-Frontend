@@ -1,7 +1,6 @@
 import { Button } from 'bootstrap';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import IndividualProduct from '../individualproduct/IndividualProduct';
 import './SmartEducation.css';
 const SmartEducation = () => {
 

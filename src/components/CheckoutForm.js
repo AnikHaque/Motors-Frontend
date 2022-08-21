@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import useAuth from '../hooks/useAuth';
 
-
-
-
 const CheckoutForm = ({appointment}) => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');

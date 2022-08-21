@@ -25,8 +25,6 @@ fetch('https://pacific-chamber-54725.herokuapp.com/create-payment-intent',{
     const handleSubmit = async(e) => {
         e.preventDefault();
         if (!stripe || !elements) {
-            // Stripe.js has not loaded yet. Make sure to disable
-            // form submission until Stripe.js has loaded.
             return;
           }
           const card = elements.getElement(CardElement);
